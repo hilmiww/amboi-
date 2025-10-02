@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profil — Website Perkenalan</title>
+  <meta name="description" content="Website perkenalan profesional dan elegan, dibuat sebagai web pertama." /> <!-- Google Font (online, kalau mau offline ganti dengan font lokal) --> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet"> <style>
+    :root{
+      --bg:#0f1724; /* dark navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#7c3aed; /* violet */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071029);color:#e6eef8}
+
+    .wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px}
+
+    /* Card */
+    .card{
+      width:100%;max-width:980px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter: blur(6px);
+      border-radius:var(--radius);padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.6);display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:center;
+    }
+
+    /* Left column */
+    .profile{
+      background:var(--card);padding:22px;border-radius:12px;display:flex;flex-direction:column;align-items:center;gap:18px
+    }
+
+    .avatar{
+      width:170px;height:170px;border-radius:20px;overflow:hidden;flex-shrink:0;border:3px solid rgba(255,255,255,0.06);
+      display:grid;place-items:center;background:linear-gradient(135deg,#0b1220, #12203a);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover}
+
+    h1{name-spacing:0;margin:0;font-size:1.5rem}
+    .role{color:var(--muted);font-size:0.92rem}
+
+    .stats{display:flex;gap:12px;margin-top:6px}
+    .stat{background:var(--glass);padding:8px 12px;border-radius:10px;font-size:0.85rem;color:var(--muted)}
+
+    .social{display:flex;gap:10px;margin-top:6px}
+    .social a{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);text-decoration:none;color:inherit;font-size:0.9rem}
+
+    /* Right column */
+    .content{padding:18px}
+    .lead{font-size:1.03rem;color:#dbeafe;margin-bottom:10px}
+    p{color:var(--muted);line-height:1.6}
+
+    .badges{display:flex;gap:10px;margin-top:12px}
+    .badge{background:linear-gradient(90deg, rgba(124,58,237,0.12), rgba(124,58,237,0.06));padding:6px 10px;border-radius:999px;font-weight:600;font-size:0.84rem;color:#e7dffb}
+
+    /* Call to action */
+    .actions{display:flex;gap:12px;margin-top:18px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    .btn-prmary{/* INTENTIONAL BUG: class name salah (btn-prmary) */padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#4f46e5);color:white}
+
+    /* Contact form */
+    form{margin-top:18px;display:grid;gap:10px}
+    input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;font-size:0.95rem}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{margin-top:18px;color:var(--muted);font-size:0.85rem}
+
+    /* Responsive */
+    @media (max-width:880px){.card{grid-template-columns:1fr;}
+      .avatar{width:120px;height:120px}
+    }
+
+    /* small aesthetic animation */
+    .shine{position:relative;overflow:hidden}
+    .shine::after{content:'';position:absolute;left:-120%;top:0;width:80%;height:100%;transform:skewX(-18deg);background:linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.04), rgba(255,255,255,0));animation:slide 5s linear infinite}
+    @keyframes slide{to{left:120%}}
+
+  </style></head>
+<body>
+  <div class="wrap">
+    <main class="card" role="main" aria-labelledby="intro-title"><aside class="profile" aria-label="Profil singkat">
+    <div class="avatar" aria-hidden="false">
+      <!-- Ganti src dengan foto profilmu (jpg/png) -->
+      <img src="foto-profil.jpg" alt="Foto profil Kamu" id="avatar-img">
+    </div>
+
+    <div style="text-align:center">
+      <h1 id="intro-title">Nama Lengkap Kamu</h1>
+      <div class="role">Siswa SMA • Penggemar Teknologi & Desain</div>
+      <div class="stats" aria-hidden="true">
+        <div class="stat">Tokyo, JP</div>
+        <div class="stat">Frontend • UI/UX</div>
+      </div>
+    </div>
+
+    <div class="social" aria-label="Tautan sosial">
+      <a href="https://instagram.com/usernameanda" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://twitter.com/usernameanda" target="_blank" rel="noopener">Twitter</a>
+    </div>
+
+  </aside>
+
+  <section class="content">
+    <p class="lead">Halo! Aku seorang siswa SMA yang suka ngulik tech & design — suka bikin project kecil, UI prototyping, dan belajar web development. Ini website perkenalan pertamaku.</p>
+
+    <p>Website ini dibuat dengan HTML, CSS, dan JavaScript. Tujuannya: ringkas, elegan, dan mudah dibaca. Kalo mau deploy, tinggal upload file ini ke hosting statis (Netlify, Vercel, GitHub Pages) atau buka langsung di browser.</p>
+
+    <div class="badges">
+      <div class="badge">HTML</div>
+      <div class="badge">CSS</div>
+      <div class="badge">JavaScript</div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-prmary shine" id="download-resume">Download Resume</button>
+      <button class="btn btn-outline" id="theme-toggle">Toggle Theme</button>
+    </div>
+
+    <form id="contact-form" aria-label="Form kontak">
+      <input type="text" id="name" name="name" placeholder="Namamu" required>
+      <input type="email" id="email" name="email" placeholder="Email" required>
+      <textarea id="msg" name="msg" placeholder="Pesan singkat"></textarea>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button type="submit" class="btn btn-prmary">Kirim</button>
+        <div id="form-status" role="status" aria-live="polite" style="color:var(--muted)"></div>
+      </div>
+    </form>
+
+    <footer>
+      <small>© <span id="year"></span> — Dibuat dengan ❤️ oleh Kamu</small>
+    </footer>
+  </section>
+
+</main>
+
+  </div> <script>
+    // Simple interactive scripts
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Toggle theme (light/dark)
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.style.getPropertyValue('--bg') === '' ? true : false;
+      // NOTE: intentionally simple theme toggle — it's a demo
+      if(document.body.style.backgroundColor === 'white'){
+        document.body.style.background = 'linear-gradient(180deg,var(--bg),#071029)';
+        document.documentElement.style.setProperty('--muted', '#94a3b8');
+      } else {
+        document.body.style.background = 'white';
+        document.documentElement.style.setProperty('--muted', '#334155');
+      }
+    });
+
+    // Contact form validation + fake submit
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      // INTENTIONAL BUG: below uses 'message' but textarea id is 'msg', so validation will fail
+      const message = document.getElementById('message') ? document.getElementById('message').value.trim() : '';
+
+      const status = document.getElementById('form-status');
+
+      if(!name || !email){
+        status.textContent = 'Nama dan email wajib diisi.';
+        return;
+      }
+
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
+        status.textContent = 'Email tidak valid.';
+        return;
+      }
+
+      status.textContent = 'Mengirim...';
+
+      // Simulate network delay then show success (no real backend)
+      setTimeout(() => {
+        status.textContent = `Halo ${name}, pesanmu sudah tersimpan (simulasi).`;
+        form.reset();
+      }, 900);
+    });
+
+    // Download resume (demo) -> create a simple txt resume and download
+    document.getElementById('download-resume').addEventListener('click', () => {
+      const resume = `Resume - Nama Kamu\n\nDeskripsi singkat tentang kamu.\nSkills: HTML, CSS, JS`;
+      const blob = new Blob([resume], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'resume.txt';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+
+    // Small progressive enhancement: replace default avatar with placeholder if not found
+    const avatar = document.getElementById('avatar-img');
+    avatar.addEventListener('error', () => {
+      avatar.src = 'data:image/svg+xml;utf8,\n <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">\n <rect width="100%" height="100%" fill="#0b1220"/>\n <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#94a3b8" font-size="24">Foto tidak tersedia</text>\n </svg>';
+    });
+
+    // Accessibility focus ring for keyboard users
+    document.addEventListener('keydown', (e) => {
+      if(e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+    });
+
+  </script> <!--
+    NOTE (README singkat):
+    - File ini adalah single-file demo: simpan sebagai HTML lalu buka di browser.
+    - Ada 2 INTENTIONAL BUGS untuk latihan debugging:
+      1) Class tombol utama di CSS namanya `.btn-prmary` (misspelling) sedangkan tombol di HTML memakai `btn-prmary` (oops) — ini bikin style tertentu nggak jalan.
+      2) Script validasi form mencoba ambil element dengan id `message` tapi textarea namanya `msg` -> hasilnya pesan dianggap kosong.
+    - Untuk memperbaiki: samakan penulisan class (`btn-primary`) dan samakan id textarea/dalam JS.
+    - Mau aku perbaiki semuanya dan tambahin versi deploy-ready + file terpisah (CSS/JS)?
+  --></body>
+  </html>
+  
